@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Roshan AI Learner</title>
+    <style>
+        /* Same CSS as home.html */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            line-height: 1.6;
+            background-color: #f4f7fc;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 10;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .logo img {
+            width: 60px;
+            height: auto;
+            transition: transform 0.4s ease-in-out;
+            border-radius: 50%;
+        }
+
+        .logo img:hover {
+            transform: rotate(360deg);
+        }
+
+        .nav-container {
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: inline-flex;
+            justify-content: space-around;
+        }
+
+        .nav-links li {
+            margin: 0 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .nav-links li:hover {
+            transform: translateY(-5px);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -5px;
+            left: 50%;
+            background-color: #1e90ff;
+            transition: 0.4s ease-in-out;
+        }
+
+        .nav-links a:hover::before {
+            width: 100%;
+            left: 0;
+        }
+
+        .projects-container {
+            padding: 40px 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .projects-container h1 {
+            font-size: 2.4em;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #333;
+        }
+
+        .project-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 30px;
+        }
+
+        .project-item {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            max-width: 350px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .project-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .project-content h2 {
+            font-size: 1.6em;
+            color: #1e90ff;
+            margin-bottom: 15px;
+        }
+
+        .project-content p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn-container a {
+            background-color: #1e90ff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(30, 144, 255, 0.4);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-container a:hover {
+            background-color: #187bcd;
+            transform: translateY(-5px);
+        }
+
+        footer {
+            background-color: #a8c8f8;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        footer .social-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        footer .social-links li {
+            margin: 0 15px;
+        }
+
+        footer .social-links a {
+            color: white;
+            font-size: 1em;
+            transition: color 0.3s ease-in-out;
+        }
+
+        footer .social-links a:hover {
+            color: #1e90ff;
+        }
+
+        footer p {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .project-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .project-item {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="aiphoto.jpeg" alt="Logo">
+        </div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="research.html">Research Papers</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+        <div class="btn-container">
+            <a href="contact.html" class="btn" id="contactBtn">Contact me ➔</a>
+        </div>
+    </header>
+
+    <section class="projects-container">
+        <h1>My Projects</h1>
+        <div class="project-grid">
+            <div class="project-item">
+                <div class="project-image">
+                    <img src="lindin12.png" alt="Project 1">
+                </div>
+                <div class="project-content">
+                    <h2>Project Jivan- Blood Donor site</h2>
+                    <p>Web based PLatform where people can  find blood requests near them. Then can inspire different people with sharing there story, experiences through posts. </p>
+                    <p style="font-style: oblique; color: rgb(255, 94, 0);">Technologies used: HTML, CSS, JavaScript, PHP, MySQL</p>
+                    <p ><a href="https://github.com/roshanbhatt420">check it</a></p>
+
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-image">
+                    <img src="blogposts.png" alt="Project 2">
+                </div>
+                <div class="project-content">
+                    <h2>ROBHAS BLOG</h2>
+                    <p>simple blog post adding platform  where people can post there thoughts, article.Has simple login, registerr sections and posts adding system.</p>
+                    <p style="font-style: oblique; color: rgb(255, 94, 0);">Technologies used: HTML, CSS, JavaScript, PHP, MySQL</p>
+                    <p ><a href="https://github.com/roshanbhatt420">check it</a></p>
+
+                </div>
+            </div>
+
+            <div class="project-item">
+                <div class="project-image">
+                    <img src="booking.png" alt="Project 3">
+                </div>
+                <div class="project-content">
+                    <h2>Project- Appointfy</h2>
+                    <p>This is web based platform where users can book appointment or can book different professionls . This project is still in the progress.</p>
+                    <p style="font-style: oblique; color: rgb(255, 94, 0);">Technologies used: HTML, CSS, JavaScript, PHP, MySQL</p>
+                    <p ><a href="https://github.com/roshanbhatt420">check it</a></p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <ul class="social-links">
+            <li><a href="https://www.linkedin.com/in/roshan-bhatta-9167772a8/">LinkedIn</a></li>
+            <li><a href="https://github.com/roshanbhatt420">GitHub</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61560308878377">Facebook</a></li>
+        </ul>
+        <p>&copy; 2024 Roshan AI Learner. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roshan AI Learner</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 1.6;
+    background-color: #f4f7fc;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 10;
+    transition: all 0.3s ease-in-out;
+}
+
+.logo img {
+    width: 60px;
+    height: auto;
+    transition: transform 0.4s ease-in-out;
+    border-radius: 50%;
+}
+
+.logo img:hover {
+    transform: rotate(360deg);
+}
+
+.nav-container {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.nav-links {
+    list-style: none;
+    display: inline-flex;
+    justify-content: space-around;
+}
+
+.nav-links li {
+    margin: 0 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-links li:hover {
+    transform: translateY(-5px);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    position: relative;
+    font-size: 1rem;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 50%;
+    background-color: #1e90ff;
+    transition: 0.4s ease-in-out;
+}
+
+.nav-links a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+.btn-container {
+    margin-left: 20px;
+}
+
+.btn {
+    background-color: #1e90ff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(30, 144, 255, 0.4);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background-color: #187bcd;
+    transform: translateY(-5px);
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 30px;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-text {
+    max-width: 600px;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.hero-text h1 {
+    font-size: 2.8em;
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.hero-text h1::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #1e90ff;
+    transition: width 0.5s ease-in-out;
+}
+
+.hero-text h1:hover::before {
+    width: 50%;
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.8;
+    animation: slideInRight 1.2s ease-in-out;
+}
+
+.hero-image {
+    animation: zoomIn 1s ease-in-out;
+}
+
+.hero-image img {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease-in-out;
+}
+
+.hero-image img:hover {
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+footer {
+    background-color: #a8c8f8;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+footer .social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    height: 24px;
+}
+
+footer .social-links li {
+    margin: 0 15px;
+}
+
+footer .social-links a {
+    color: white;
+    
+    font-size: 1em;
+    transition: color 0.3s ease-in-out;
+}
+
+footer .social-links a:hover {
+    color: #1e90ff;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2em;
+    }
+
+    .hero-image img {
+        max-width: 400px;
+    }
+
+    .nav-links li {
+        margin: 0 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2em;
+    }
+
+    .hero-image img {
+        max-width: 350px;
+    }
+
+    .btn {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-image img {
+        max-width: 250px;
+    }
+
+    header {
+        padding: 10px 15px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="aiphoto.jpeg" alt="Logo">
+        </div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="research.html">Research Papers</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+        <div class="btn-container">
+            <a href="contact.html" class="btn" id="contactBtn">Contact me ➔</a>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-text">
+            <h1>“Hi, I’m Roshan – An AI Enthusiast & Software Engineering student”</h1>
+            <p>Explore my projects, research papers, and collaborations to see how I aim to push the boundaries of AI and technology. Feel free to reach out for collaborations or discussions!</p>
+        </div>
+        <div class="hero-image">
+            <img src="khai.jpg" alt="AI Image">
+        </div>
+    </section>
+    <footer>
+        <ul class="social-links">
+            <li><a href="https://www.linkedin.com/in/roshan-bhatta-9167772a8/">LinkedIn</a></li>
+            <li><a href="https://github.com/roshanbhatt420">GitHub</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61560308878377">Facebook</a></li>
+        </ul>
+        <p>&copy; 2024 Roshan AI Learner. All rights reserved.</p>
+    </footer>
+</body>
+</html>
